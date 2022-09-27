@@ -16,8 +16,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import LoginIcon from '@mui/icons-material/Login';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import SearchIcon from '@mui/icons-material/Search';
+
 import Dash from './dash/Dash';
 
 const drawerWidth = 240;
@@ -122,16 +126,46 @@ export default function PersistentDrawerLeft() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => console.log("out")}>
+                        <ListItemButton onClick={() => console.log("dash")}>
                             <ListItemIcon>
-                                <InboxIcon />
+                                <DashboardIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Inbox"} />
+                            <ListItemText primary={"Dashboard"} />
                         </ListItemButton>
                     </ListItem>
-
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => console.log("logout")}>
+                            <ListItemIcon>
+                                <LoginIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Logout"} />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => console.log("Nut(trition)")}>
+                            <ListItemIcon>
+                                <RestaurantIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Nutrition"} />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => console.log("Activity")}>
+                            <ListItemIcon>
+                                <FitnessCenterIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Activity"} />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => console.log("search")}>
+                            <ListItemIcon>
+                                <SearchIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Search"} />
+                        </ListItemButton>
+                    </ListItem>
                 </List>
                 <Divider />
                 {/* <List>
