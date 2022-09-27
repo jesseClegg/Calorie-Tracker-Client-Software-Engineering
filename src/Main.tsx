@@ -20,7 +20,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LoginIcon from '@mui/icons-material/Login';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import SearchIcon from '@mui/icons-material/Search';
 
 import Dash from './dash/Dash';
 import NutritionPage from './nutrition/NutritionPage';
