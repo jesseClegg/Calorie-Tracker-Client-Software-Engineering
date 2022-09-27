@@ -23,6 +23,8 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import SearchIcon from '@mui/icons-material/Search';
 
 import Dash from './dash/Dash';
+import NutritionPage from './nutrition/NutritionPage';
+import ActivityPage from './activity/ActivityPage';
 
 const drawerWidth = 240;
 
@@ -78,6 +80,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const [page, setPage] = React.useState(<Dash />);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -127,7 +130,7 @@ export default function PersistentDrawerLeft() {
                 <Divider />
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => console.log("dash")}>
+                        <ListItemButton onClick={() => setPage(<Dash />)}>
                             <ListItemIcon>
                                 <DashboardIcon />
                             </ListItemIcon>
@@ -143,7 +146,7 @@ export default function PersistentDrawerLeft() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => console.log("Nut(trition)")}>
+                        <ListItemButton onClick={() => setPage(<NutritionPage />)}>
                             <ListItemIcon>
                                 <RestaurantIcon />
                             </ListItemIcon>
@@ -151,39 +154,19 @@ export default function PersistentDrawerLeft() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => console.log("Activity")}>
+                        <ListItemButton onClick={() => setPage(<ActivityPage />)}>
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Activity"} />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton onClick={() => console.log("search")}>
-                            <ListItemIcon>
-                                <SearchIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={"Search"} />
-                        </ListItemButton>
-                    </ListItem>
                 </List>
                 <Divider />
-                {/* <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List> */}
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <Dash />
+                {page}
             </Main>
         </Box>
     );
