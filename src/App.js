@@ -1,10 +1,8 @@
-import './App.css';
-import Dashboard from './dash/Dashboard';
+import "./App.css";
+import PersistentDrawerLeft from "./Main.tsx";
 
 function App() {
-  return (
-    <Dashboard />
-  );
+  return <PersistentDrawerLeft />;
 }
 
 export default App;
