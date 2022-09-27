@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -10,13 +10,22 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
+import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import LoginIcon from "@mui/icons-material/Login";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import SearchIcon from "@mui/icons-material/Search";
+import { Button } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems } from "./dash/listItems";
 import Dash from "./dash/Dash";
+import LoginPage from "./login/LoginPage";
 
 function Copyright(props) {
   return (
@@ -82,11 +91,15 @@ const Drawer = styled(MuiDrawer, {
 const mdTheme = createTheme();
 
 function Content() {
-  const [pageState, setPageState] = useState(<Dash />);
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  const [pageState, setPageState] = useState(<Dash />);
+  useEffect(() => {
+    setPageState(<Dash />);
+  }, []);
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -127,26 +140,49 @@ function Content() {
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
-          <Toolbar
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              px: [1],
-            }}
-          >
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
+          <IconButton onClick={toggleDrawer}>
+            <ChevronLeftIcon />
+          </IconButton>
           <Divider />
-          <List component="nav">
-            {mainListItems}
-            {/* <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
-            <Divider sx={{ my: 1 }} />
-            {TernaryListItems} */}
-          </List>
+          <IconButton>
+            <LoginIcon onClick={console.log("click")} />
+          </IconButton>
+          {/*<Stack sx={{ marginLeft: ".8rem" }}>
+            <Button>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </Button>
+            <br />
+            <Button>
+              <ListItemIcon>
+                <LoginIcon />
+              </ListItemIcon>
+              <ListItemText primary="Login" />
+            </Button>
+            <br />
+            <Button onClick={console.log("fuk")}>
+              <ListItemIcon>
+                <RestaurantIcon />
+              </ListItemIcon>
+              <ListItemText primary="Meals" />
+            </Button>
+            <br />
+            <Button>
+              <ListItemIcon>
+                <FitnessCenterIcon />
+              </ListItemIcon>
+              <ListItemText primary="Activity" />
+            </Button>
+            <br />
+            <Button>
+              <ListItemIcon>
+                <SearchIcon />
+              </ListItemIcon>
+              <ListItemText primary="Search" />
+            </Button>
+          </Stack> */}
         </Drawer>
         <Box
           component="main"
@@ -160,7 +196,6 @@ function Content() {
             overflow: "auto",
           }}
         >
-          <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             {pageState}
             <Copyright sx={{ pt: 4 }} />
