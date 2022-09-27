@@ -1,8 +1,8 @@
 import "./App.css";
-import Main from "./Main";
+import PersistentDrawerLeft from "./Main.tsx";
 
 function App() {
-  return <Main />;
+  return <PersistentDrawerLeft />;
 }
 
 export default App;

@@ -26,6 +26,7 @@ import { Button } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import Dash from "./dash/Dash";
 import LoginPage from "./login/LoginPage";
+import { Margin } from "@mui/icons-material";
 
 function Copyright(props) {
   return (
@@ -44,50 +45,6 @@ function Copyright(props) {
 
 const drawerWidth = 240;
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: "border-box",
-    ...(!open && {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(9),
-      },
-    }),
-  },
-}));
-
 const mdTheme = createTheme();
 
 function Content() {
@@ -105,7 +62,9 @@ function Content() {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <MuiAppBar sx={{
+          position: "absolute"
+        }}>
           <Toolbar
             sx={{
               pr: "24px", // keep right padding when drawer closed
@@ -116,10 +75,6 @@ function Content() {
               color="inherit"
               aria-label="open drawer"
               onClick={toggleDrawer}
-              sx={{
-                marginRight: "36px",
-                ...(open && { display: "none" }),
-              }}
             >
               <MenuIcon />
             </IconButton>
@@ -133,57 +88,12 @@ function Content() {
               Hey Coach
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={1} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
           </Toolbar>
-        </AppBar>
-        <Drawer variant="permanent" open={open}>
-          <IconButton onClick={toggleDrawer}>
-            <ChevronLeftIcon />
-          </IconButton>
-          <Divider />
-          <IconButton>
-            <LoginIcon onClick={console.log("click")} />
-          </IconButton>
-          {/*<Stack sx={{ marginLeft: ".8rem" }}>
-            <Button>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </Button>
-            <br />
-            <Button>
-              <ListItemIcon>
-                <LoginIcon />
-              </ListItemIcon>
-              <ListItemText primary="Login" />
-            </Button>
-            <br />
-            <Button onClick={console.log("fuk")}>
-              <ListItemIcon>
-                <RestaurantIcon />
-              </ListItemIcon>
-              <ListItemText primary="Meals" />
-            </Button>
-            <br />
-            <Button>
-              <ListItemIcon>
-                <FitnessCenterIcon />
-              </ListItemIcon>
-              <ListItemText primary="Activity" />
-            </Button>
-            <br />
-            <Button>
-              <ListItemIcon>
-                <SearchIcon />
-              </ListItemIcon>
-              <ListItemText primary="Search" />
-            </Button>
-          </Stack> */}
-        </Drawer>
+        </MuiAppBar>
         <Box
           component="main"
           sx={{
@@ -197,6 +107,8 @@ function Content() {
           }}
         >
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <br />
+            <br />
             {pageState}
             <Copyright sx={{ pt: 4 }} />
           </Container>
