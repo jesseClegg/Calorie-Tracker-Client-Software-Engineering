@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom'
+
 const Landing = props => {
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3">
                 <div className="container">
 
-                    <a href="index.html" className="navbar-brand text-primary">Hey Coach</a>
+                    <a href="#landing" className="navbar-brand text-primary">Hey Coach</a>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                         <span className="navbar-toggler-icon"></span>
@@ -13,10 +15,10 @@ const Landing = props => {
                     <div className="collapse navbar-collapse" id="navmenu">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <a href="#login" className="nav-link">Sign Up</a>
+                                <Link className='nav-link' to='/signup'>Sign Up</Link>
                             </li>
                             <li className="nav-item">
-                                <a href="#login" className="nav-link text-info">Log In</a>
+                                <Link className='nav-link text-info' to='/login'>Log In</Link>
                             </li>
                         </ul>
                     </div>
@@ -24,7 +26,7 @@ const Landing = props => {
                 </div>
             </nav>
 
-            <section className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-md-start">
+            <section className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-md-start" id="landing">
                 <div className="container">
                     <div className="d-md-flex align-items-center justify-content-between">
                         <div>

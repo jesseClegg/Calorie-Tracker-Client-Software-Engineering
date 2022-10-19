@@ -1,10 +1,10 @@
 import { Container } from 'react-bootstrap'
-import { AuthProvider } from "./components/user-auth/contexts/AuthContexts";
+import { AuthProvider } from "./user-auth/contexts/AuthContexts";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Landing from './pages/Landing'
-import Dashboard from './pages/Dashboard'
-import SignUp from "./pages/SignUp"
-import LogIn from "./pages/LogIn"
+import Landing from './Landing'
+import Dash from './dash/Dash'
+import SignUp from "./user-auth/SignUp"
+import LogIn from "./user-auth/LogIn"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route exact path='/' element={<Landing />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/dash' element={<Dash />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<LogIn />} />
         </Routes>
