@@ -22,8 +22,8 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 import Dash from './dash/Dash';
-import NutritionPage from './nutrition/NutritionPage';
-import ActivityPage from './activity/ActivityPage';
+// import NutritionPage from './nutrition/NutritionPage';
+// import ActivityPage from './activity/ActivityPage';
 
 const drawerWidth = 240;
 
@@ -144,22 +144,22 @@ export default function PersistentDrawerLeft() {
                             <ListItemText primary={"Logout"} />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding>
+                    {/* <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<NutritionPage />)}>
                             <ListItemIcon>
                                 <RestaurantIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Nutrition"} />
                         </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
+                    </ListItem> */}
+                    {/* <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<ActivityPage />)}>
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Activity"} />
                         </ListItemButton>
-                    </ListItem>
+                    </ListItem> */}
                 </List>
                 <Divider />
             </Drawer>
