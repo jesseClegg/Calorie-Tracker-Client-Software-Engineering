@@ -1,10 +1,10 @@
 import { Container } from 'react-bootstrap'
-import { AuthProvider } from "./user-auth/contexts/AuthContexts";
+import { AuthProvider } from "./components/user-auth/contexts/AuthContexts";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Landing from './Landing'
-import Dashboard from './Dashboard'
-import SignUp from "./user-auth/SignUp"
-import LogIn from "./user-auth/LogIn"
+import Landing from './pages/Landing'
+import Dashboard from './pages/Dashboard'
+import SignUp from "./pages/SignUp"
+import LogIn from "./pages/LogIn"
 
 function App() {
   return (
