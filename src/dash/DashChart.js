@@ -46,17 +46,23 @@ const labels = [
   "Sunday",
 ];
 
+const weeks = [
+  "current",
+  "last week",
+  "the week before",
+];
+
 export const data = {
   labels,
   datasets: [
     {
-      label: "Calorie Intake",
+      label: "Calories Consumed",
       data: labels.map(() => faker.datatype.number({ min: 500, max: 4000 })),
       borderColor: "rgb(30, 99, 200)",
       backgroundColor: "rgb(30, 99, 250)",
     },
     {
-      label: "Calorie Burn",
+      label: "Calories Burned",
       data: labels.map(() => faker.datatype.number({ min: 500, max: 3000 })),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
