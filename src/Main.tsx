@@ -22,8 +22,8 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 import Dash from './dash/Dash';
-// import NutritionPage from './nutrition/NutritionPage';
-// import ActivityPage from './activity/ActivityPage';
+import Nutrition from './components/Nutrition';
+import Fitness from './components/Fitness';
 
 const drawerWidth = 240;
 
@@ -137,6 +137,22 @@ export default function PersistentDrawerLeft() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<Nutrition />)}>
+                            <ListItemIcon>
+                                <RestaurantIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Nutrition"} />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<Fitness />)}>
+                            <ListItemIcon>
+                                <FitnessCenterIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Activity"} />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
                         <ListItemButton onClick={() => console.log("logout")}>
                             <ListItemIcon>
                                 <LoginIcon />
@@ -144,22 +160,6 @@ export default function PersistentDrawerLeft() {
                             <ListItemText primary={"Logout"} />
                         </ListItemButton>
                     </ListItem>
-                    {/* <ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<NutritionPage />)}>
-                            <ListItemIcon>
-                                <RestaurantIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={"Nutrition"} />
-                        </ListItemButton>
-                    </ListItem> */}
-                    {/* <ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<ActivityPage />)}>
-                            <ListItemIcon>
-                                <FitnessCenterIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={"Activity"} />
-                        </ListItemButton>
-                    </ListItem> */}
                 </List>
                 <Divider />
             </Drawer>
