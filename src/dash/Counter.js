@@ -215,54 +215,37 @@ export function Interface() {
     });
 
     return (            //main DOM return
-        <Box className="interfaceContainer">
-            <Stack className="outerStack">
-                <Paper>
-                    <br />
-                    <Stack justifyContent="left">
-                        <Container style={{ fontSize: "24px", paddingLeft: "22px", margin: "0px", textAlign: "left" }}>Quick Add Meal</Container>
-                        <br />
-                        <ThemeProvider theme={TFtheme}>
-                            <Grid container spacing={1}>
-                                <Grid item xs={6}>
-                                    <Stack>
-                                        <Container style={{ fontSize: "14px", /*color: mfocused ? '#499c8c' : ''*/ }}>
-                                            <TextField id="interfaceTF" placeholder="Add item" variant="standard" fullWidth sx={{ width: '100%' }} label='meal'
-                                                onChange={(mealText) => setMealText(mealText.target.value)}
-                                                inputRef={mealInput}
-                                                InputLabelProps={{ shrink: true, fontSize: '14.5px' }}
-                                            />
-                                        </Container>
-                                    </Stack>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Stack>
-                                        <Container style={{ fontSize: "14px", /*color: cfocused ? '#499c8c' : ''*/ }}>
-                                            <TextField id="interfaceTF" placeholder="Add calories" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='calories'
-                                                onChange={(calText) => setCalText(calText.target.value)}
-                                                inputRef={calInput}
-                                                InputLabelProps={{ shrink: true }}
-                                            />
-                                        </Container>
-                                    </Stack>
-                                </Grid>
-                            </Grid>
-                        </ThemeProvider>
-                        <br />
-                        <ButtonHandler />
-                    </Stack>
-                    <br />
-                    <br />
-                </Paper>
-            </Stack>
-            <Container style={{
-                textAlign: "left",
-                fontSize: "1rem",
-                margin: ".1rem"
-            }}>
-                <h3>Net daily intake: {calSum + " calories"}</h3>
-            </Container>
-            <MealList />
+        <Box>
+            <Paper sx={{ p: 3 }}>
+                <h3>Quick Add Meal</h3>
+                <Grid container spacing={1}>
+                    <Grid item xs={6}>
+                        <Container style={{ fontSize: "14px", /*color: mfocused ? '#499c8c' : ''*/ }}>
+                            <TextField id="interfaceTF" placeholder="Add item" variant="standard" fullWidth sx={{ width: '100%' }} label='meal'
+                                onChange={(mealText) => setMealText(mealText.target.value)}
+                                inputRef={mealInput}
+                                InputLabelProps={{ shrink: true, fontSize: '14.5px' }}
+                            />
+                        </Container>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Container style={{ fontSize: "14px", /*color: cfocused ? '#499c8c' : ''*/ }}>
+                            <TextField id="interfaceTF" placeholder="Add calories" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='calories'
+                                onChange={(calText) => setCalText(calText.target.value)}
+                                inputRef={calInput}
+                                InputLabelProps={{ shrink: true }}
+                            />
+                        </Container>
+                    </Grid>
+                </Grid>
+                <br />
+                <ButtonHandler />
+            </Paper>
+            <br />
+            <Paper sx={{ p: 3 }}>
+                <h3>Total daily intake: {calSum + " calories"}</h3>
+                <MealList />
+            </Paper>
         </Box>
     )
 }
