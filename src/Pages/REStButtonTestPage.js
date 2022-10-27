@@ -5,7 +5,7 @@ import GetDaysRequestButton from "./RESTTestButtons/GetDaysRequestButton";
 import GetFoodsRequestButton from "./RESTTestButtons/GetFoodsRequestButton";
 
 export function REStButtonTestPage() {
-    return <Container>Nutrition
+    return <Container>RESTButtonTestPage
 
         <GetActivitiesRequestButton />
         <GetDaysRequestButton />

@@ -22,7 +22,11 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import ActivityPage from './Pages/ActivityPage';
 import REStButtonTestPage from './Pages/REStButtonTestPage';
+import FoodPage from './Pages/FoodPage';
+import PastDates from './Pages/PastDates';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Dash from './dash/Dash';
+import CellTowerIcon from '@mui/icons-material/CellTower';
 //import Landing from './Landing';
 // import REStButtonTestPage from './nutrition/REStButtonTestPage';
 // import ActivityPage from './activity/ActivityPage';
@@ -153,7 +157,7 @@ export default function PersistentDrawerLeft() {
                     { <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<REStButtonTestPage />)}>
                             <ListItemIcon>
-                                <RestaurantIcon />
+                                <CellTowerIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Test Request Button Page"} />
                         </ListItemButton>
@@ -164,6 +168,22 @@ export default function PersistentDrawerLeft() {
                                 <FitnessCenterIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Activity"} />
+                        </ListItemButton>
+                    </ListItem> }
+                    { <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<FoodPage />)}>
+                            <ListItemIcon>
+                                <RestaurantIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Food"} />
+                        </ListItemButton>
+                    </ListItem> }
+                    { <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<PastDates />)}>
+                            <ListItemIcon>
+                                <CalendarMonthIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Past Dates"} />
                         </ListItemButton>
                     </ListItem> }
                 </List>
