@@ -141,7 +141,7 @@ export default function PersistentDrawerLeft() {
                             <ListItemIcon>
                                 <RestaurantIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Nutrition"} />
+                            <ListItemText primary={"Food"} />
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
@@ -149,7 +149,7 @@ export default function PersistentDrawerLeft() {
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Activity"} />
+                            <ListItemText primary={"Exercise"} />
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>

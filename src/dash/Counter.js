@@ -220,7 +220,7 @@ export function Interface() {
                 <Paper>
                     <br />
                     <Stack justifyContent="left">
-                        <Container style={{ fontSize: "24px", paddingLeft: "22px", margin: "0px", textAlign: "left" }}>Add Meal / Food Item</Container>
+                        <Container style={{ fontSize: "24px", paddingLeft: "22px", margin: "0px", textAlign: "left" }}>Quick Add Meal</Container>
                         <br />
                         <ThemeProvider theme={TFtheme}>
                             <Grid container spacing={1}>

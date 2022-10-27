@@ -11,7 +11,7 @@ export function Dash() {
     <Grid container spacing={3}>
       <Grid>
         <div className="text-center align-items-center justify-content-between">
-          <h1>?YOURNAME's Overview</h1>
+          <h1>Overview</h1>
         </div>
       </Grid>
       <Grid item xs={12} md={12} lg={12}>
