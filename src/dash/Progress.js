@@ -16,7 +16,7 @@ export default function Progress(data) {
   }
   return (
     <>
-      <Title>Progress</Title>
+      <Title>Today's Calories</Title>
       <Typography component="p" sx={{ fontSize: '1.5rem' }}>
         + {' ' + sum + ' calories'}
       </Typography>

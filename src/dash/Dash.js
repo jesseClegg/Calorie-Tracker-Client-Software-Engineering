@@ -9,19 +9,14 @@ export function Dash() {
 
   return (
     <Grid container spacing={3}>
-      <Grid>
-        <div className="text-center align-items-center justify-content-between">
-          <h1>Overview</h1>
-        </div>
-      </Grid>
-      <Grid item xs={12} md={12} lg={12}>
+      <Grid item xs={12}>
         <Paper>
-          <br />
-          {DashChart}
-          <br />
+          <div className="text-center align-items-center justify-content-between">
+            <h1>Overview</h1>
+          </div>
         </Paper>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12}>
         <Paper
           sx={{
             p: 2,
@@ -32,9 +27,21 @@ export function Dash() {
           <Progress data={data.datasets[0].data} />
         </Paper>
       </Grid>
+      {/* <Grid item xs={12} md={12} lg={12}>
+        <Paper>
+          <br />
+          {DashChart}
+          <br />
+        </Paper>
+      </Grid> */}
       <Grid item xs={12} md={6}>
         <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
           <CalorieCounter />
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Paper>
+          <h2>Quick Add Exercise</h2>
         </Paper>
       </Grid>
     </Grid>
