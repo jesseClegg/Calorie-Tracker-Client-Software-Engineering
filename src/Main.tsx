@@ -20,9 +20,11 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LoginIcon from '@mui/icons-material/Login';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-
+import ActivityPage from './Pages/ActivityPage';
+import REStButtonTestPage from './Pages/REStButtonTestPage';
 import Dash from './dash/Dash';
-// import NutritionPage from './nutrition/NutritionPage';
+//import Landing from './Landing';
+// import REStButtonTestPage from './nutrition/REStButtonTestPage';
 // import ActivityPage from './activity/ActivityPage';
 
 const drawerWidth = 240;
@@ -137,29 +139,33 @@ export default function PersistentDrawerLeft() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => console.log("logout")}>
+                        <ListItemButton onClick={() =>  {
+                            localStorage.clear();
+                            window.location.href = '/';
+                        }
+                        }>
                             <ListItemIcon>
                                 <LoginIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Logout"} />
                         </ListItemButton>
                     </ListItem>
-                    {/* <ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<NutritionPage />)}>
+                    { <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<REStButtonTestPage />)}>
                             <ListItemIcon>
                                 <RestaurantIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Nutrition"} />
+                            <ListItemText primary={"Test Request Button Page"} />
                         </ListItemButton>
-                    </ListItem> */}
-                    {/* <ListItem disablePadding>
+                    </ListItem> }
+                    { <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<ActivityPage />)}>
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Activity"} />
                         </ListItemButton>
-                    </ListItem> */}
+                    </ListItem> }
                 </List>
                 <Divider />
             </Drawer>
