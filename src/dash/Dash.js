@@ -1,11 +1,11 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import Container from "@mui/material/Container"
 import Progress from "./Progress";
 import CalorieCounter from "./Counter";
 import { LineChart, data } from "./DashChart";
 
 export function Dash() {
-  const DashChart = <LineChart />;
 
   return (
     <Grid container spacing={3}>
@@ -17,31 +17,27 @@ export function Dash() {
         </Paper>
       </Grid>
       <Grid item xs={12}>
-        <Paper
-          sx={{
-            p: 2,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <Paper sx={{ p: 3 }}>
           <Progress data={data.datasets[0].data} />
         </Paper>
       </Grid>
-      {/* <Grid item xs={12} md={12} lg={12}>
-        <Paper>
-          <br />
-          {DashChart}
-          <br />
-        </Paper>
-      </Grid> */}
       <Grid item xs={12} md={6}>
-        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+        <Paper sx={{ p: 3 }}>
+          <h2>Calories In</h2>
           <CalorieCounter />
         </Paper>
       </Grid>
       <Grid item xs={12} md={6}>
+        <Paper sx={{ p: 3}}>
+          <h2>Calories Out</h2>
+          <Paper>
+            Quick Add Exercise
+          </Paper>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
         <Paper>
-          <h2>Quick Add Exercise</h2>
+          <LineChart></LineChart>
         </Paper>
       </Grid>
     </Grid>
