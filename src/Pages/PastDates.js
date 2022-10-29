@@ -6,7 +6,6 @@ import DateRangePicker from './DateRangePicker';
 export function PastDatesPage() {
     return <Container>Past Dates
     <DateRangePicker />
-
     </Container>
 
 }
