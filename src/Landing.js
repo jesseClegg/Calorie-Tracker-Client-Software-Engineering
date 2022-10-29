@@ -6,7 +6,7 @@ const Landing = props => {
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3">
                 <div className="container">
 
-                    <a href="#landing" className="navbar-brand text-primary">Hey Coach</a>
+                    <Link className='navbar-brand text-primary' to='/'>Hey Coach</Link>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                         <span className="navbar-toggler-icon"></span>
