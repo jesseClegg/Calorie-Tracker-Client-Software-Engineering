@@ -2,7 +2,14 @@
 
 ### [Link to Server Repo](https://github.com/jesseClegg/calorieTrackerServer)
 
- 
+
+### [Current Build](https://frolicking-dragon-c1d1a8.netlify.app/)
+
+
+### If you are unsure about workflow:
+- make a branch off of dev with the name of your proposed feature
+- after implementing the feature, submit pull request to merge into dev
+- try and keep branches to one feature or smaller features to avoid merge conflicts
 
 ### Instructions to run:
 - must have node installed
@@ -11,11 +18,11 @@
 - npm start (nodemon also works)
 
 
-### [Current Build](https://frolicking-dragon-c1d1a8.netlify.app/)
 
-### TODO
+### TODO:
 
 (updated 10/29)
+- fix netifly build (low priority)
 - Card/component to select favorite food
 - Card/component to select favorite excercise
 - s3 will be needed to store favorite images
