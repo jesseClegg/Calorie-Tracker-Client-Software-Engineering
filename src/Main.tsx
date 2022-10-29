@@ -26,10 +26,15 @@ import FoodPage from './Pages/FoodPage';
 import PastDates from './Pages/PastDates';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Dash from './dash/Dash';
+
+import Nutrition from './components/Nutrition';
+import Fitness from './components/Fitness';
+
 import CellTowerIcon from '@mui/icons-material/CellTower';
 //import Landing from './Landing';
 // import REStButtonTestPage from './nutrition/REStButtonTestPage';
 // import ActivityPage from './activity/ActivityPage';
+
 
 const drawerWidth = 240;
 
@@ -143,17 +148,32 @@ export default function PersistentDrawerLeft() {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
+
+
                         <ListItemButton onClick={() =>  {
                             localStorage.clear();
                             window.location.href = '/';
                         }
                         }>
+
                             <ListItemIcon>
-                                <LoginIcon />
+                                <RestaurantIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Logout"} />
+                            <ListItemText primary={"Food"} />
                         </ListItemButton>
                     </ListItem>
+
+                  /*  <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<Fitness />)}>
+                            <ListItemIcon>
+                                <FitnessCenterIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Exercise"} />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => console.log("logout")}> */
+
                     { <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<REStButtonTestPage />)}>
                             <ListItemIcon>
@@ -164,11 +184,15 @@ export default function PersistentDrawerLeft() {
                     </ListItem> }
                     { <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<ActivityPage />)}>
+
                             <ListItemIcon>
-                                <FitnessCenterIcon />
+                                <LoginIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Activity"} />
+                            <ListItemText primary={"Logout"} />
                         </ListItemButton>
+
+                    </ListItem>
+
                     </ListItem> }
                     { <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<FoodPage />)}>
@@ -186,6 +210,7 @@ export default function PersistentDrawerLeft() {
                             <ListItemText primary={"Past Dates"} />
                         </ListItemButton>
                     </ListItem> }
+
                 </List>
                 <Divider />
             </Drawer>
