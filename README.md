@@ -1,12 +1,28 @@
-# Getting Started with Create React App
+# Calorie and Activity Tracker Server App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [Link to Server Repo](https://github.com/jesseClegg/calorieTrackerServer)
 
-## [Current Build](https://frolicking-dragon-c1d1a8.netlify.app/)
+ 
 
-## TODO
- - Firebase Auth
- - Database
- - Recoil global states for pages
- - Workout Tracker and calorie burn
- - Import foods directly from fda
+### Instructions to run:
+- must have node installed
+- run rpm install (on first run)
+- npm upate MAY be necessary
+- npm start (nodemon also works)
+
+
+### [Current Build](https://frolicking-dragon-c1d1a8.netlify.app/)
+
+### TODO
+
+(updated 10/29)
+- Card/component to select favorite food
+- Card/component to select favorite excercise
+- s3 will be needed to store favorite images
+- finish deploying on ec2 (pm2 or security issue)
+- restructure the directory organization
+- better naming conventions
+- fetch data with useeffect hook 
+- Database (most likely mongoDB, suggestions welcome)
+- Recoil global states for pages
+- Workout Tracker and calorie burn
