@@ -4,6 +4,7 @@ import Container from "@mui/material/Container"
 import Progress from "./Progress";
 import CalorieCounter from "./Counter";
 import { LineChart, data } from "./DashChart";
+import ActivityCard from "./ActivityTracker";
 
 export function Dash() {
 
@@ -31,9 +32,7 @@ export function Dash() {
         <Grid item xs={12} md={6}>
           <Paper className="bg-dark text-light" sx={{ p: 3 }}>
             <h2>Calories Out</h2>
-            <Paper>
-              Quick Add Exercise
-            </Paper>
+            <ActivityCard />
           </Paper>
         </Grid>
         <Grid item xs={12}>
