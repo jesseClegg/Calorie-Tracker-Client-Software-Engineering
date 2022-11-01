@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { Container } from 'react-bootstrap'
 import { AuthProvider } from "./user-auth/contexts/AuthContexts";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'

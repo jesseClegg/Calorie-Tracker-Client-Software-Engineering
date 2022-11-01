@@ -32,7 +32,9 @@ export function Dash() {
         <Grid item xs={12} md={6}>
           <Paper className="bg-dark text-light" sx={{ p: 3 }}>
             <h2>Calories Out</h2>
+
             <ActivityCard />
+
           </Paper>
         </Grid>
         <Grid item xs={12}>
