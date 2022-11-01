@@ -22,7 +22,6 @@ export function Interface() {
     const [mealItems, updateMealItems] = useState(JSON.parse(localStorage.getItem('meal-list')) || []);                     //stores all meals as object array
     const [calSum, setCalSum] = useState(JSON.parse(localStorage.getItem('cal-sum')) || 0);                                 //stores calorie sum as number
 
-
     React.useEffect(() => {                                                                                                 //saves user data to localStorage on every rerender
         localStorage.setItem('meal-list', JSON.stringify(mealItems));
         localStorage.setItem('cal-sum', calSum)
