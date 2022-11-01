@@ -28,7 +28,8 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Dash from './dash/Dash';
 
 import Nutrition from './components/Nutrition';
-import Fitness from './components/Fitness';
+import Activity from './components/Activity';
+import Profile from './components/Profile';
 
 
 
@@ -151,95 +152,63 @@ export default function PersistentDrawerLeft() {
                             <ListItemText primary={"Dashboard"} />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding>
 
+                    <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<Nutrition />)}>
                             <ListItemIcon>
                                 <RestaurantIcon />
                             </ListItemIcon>
-                        </ListItemButton>
-                        <ListItemButton onClick={() => {
-                            localStorage.clear();
-                            window.location.href = '/';
-                        }
-                        }>
-                            <ListItemIcon>
-                                <LogoutIcon />
-
-                            </ListItemIcon>
-                            <ListItemText primary={"Food"} />
+                            <ListItemText primary={"Nutrition"} />
                         </ListItemButton>
                     </ListItem>
 
-
-
-
-
-                    {<ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<Fitness />)}>
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<Activity />)}>
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Fitness"} />
+                            <ListItemText primary={"Activity"} />
                         </ListItemButton>
-                    </ListItem>}
+                    </ListItem>
 
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => setPage(<Profile />)}>
+                            <ListItemIcon>
+                                <FitnessCenterIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Profile"} />
+                        </ListItemButton>
+                    </ListItem>
 
-
-
-
-
-
-
-
-
-
-                    {<ListItem disablePadding>
+                    <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<REStButtonTestPage />)}>
                             <ListItemIcon>
                                 <CellTowerIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Test Request Button Page"} />
                         </ListItemButton>
-                    </ListItem>}
+                    </ListItem>
 
-
-
-
-                    {<ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<ActivityPage />)}>
-                            <ListItemIcon>
-                                <LoginIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={"ActivityPage"} />
-                        </ListItemButton>
-                    </ListItem>}
-
-
-
-
-
-
-                    {<ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<FoodPage />)}>
-                            <ListItemIcon>
-                                <RestaurantIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={"Food"} />
-                        </ListItemButton>
-                    </ListItem>}
-
-
-
-                    {<ListItem disablePadding>
+                    <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<PastDates />)}>
                             <ListItemIcon>
                                 <CalendarMonthIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Past Dates"} />
                         </ListItemButton>
-                    </ListItem>}
+                    </ListItem>
 
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => {
+                            localStorage.clear();
+                            window.location.href = '/';
+                        }}>
+                            <ListItemIcon>
+                                <LogoutIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Logout"} />
+                        </ListItemButton>
+                    </ListItem>
 
                 </List>
                 <Divider />

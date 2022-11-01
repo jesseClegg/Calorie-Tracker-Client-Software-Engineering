@@ -38,7 +38,7 @@ export function Dash() {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className="bg-dark text-light text-center" sx={{ p: 3}}>
+          <Paper className="bg-dark text-light text-center" sx={{ p: 3 }}>
             <h2>Net Calories</h2>
             <Paper>
               <LineChart></LineChart>
