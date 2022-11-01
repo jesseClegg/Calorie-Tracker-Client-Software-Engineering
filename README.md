@@ -1,4 +1,4 @@
-# Calorie and Activity Tracker Server App
+# Calorie and ActivityPage Tracker Server App
 
 ### [Link to Server Repo](https://github.com/jesseClegg/calorieTrackerServer)
 

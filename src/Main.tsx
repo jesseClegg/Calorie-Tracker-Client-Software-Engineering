@@ -17,27 +17,18 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import LoginIcon from '@mui/icons-material/Login';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import ActivityPage from './Pages/ActivityPage';
-import REStButtonTestPage from './Pages/REStButtonTestPage';
-import FoodPage from './Pages/FoodPage';
-import PastDates from './Pages/PastDates';
+import REStButtonTestPage from './Pages/RESTTestButtons/REStButtonTestPage';
+import PastDates from './Pages/MyProgress/MyProgressPage';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import Dash from './dash/Dash';
-
-import Nutrition from './components/Nutrition';
-import Activity from './components/Activity';
-import Profile from './components/Profile';
-
-
-
+import Dash from './Pages/DashPage/Dash';
+import NutritionPage from './Pages/NutritionPage/NutritionPage';
+import ActivityPage from './Pages/ActivityPage/ActivityPage';
+import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CellTowerIcon from '@mui/icons-material/CellTower';
-//import Landing from './Landing';
-// import REStButtonTestPage from './nutrition/REStButtonTestPage';
-// import ActivityPage from './activity/ActivityPage';
+
 
 
 
@@ -62,9 +53,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     }),
 }));
 
+
+
 interface AppBarProps extends MuiAppBarProps {
     open?: boolean;
 }
+
+
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
@@ -154,29 +149,29 @@ export default function PersistentDrawerLeft() {
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<Nutrition />)}>
+                        <ListItemButton onClick={() => setPage(<NutritionPage />)}>
                             <ListItemIcon>
                                 <RestaurantIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Nutrition"} />
+                            <ListItemText primary={"NutritionPage"} />
                         </ListItemButton>
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<Activity />)}>
+                        <ListItemButton onClick={() => setPage(<ActivityPage />)}>
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Activity"} />
+                            <ListItemText primary={"ActivityPage"} />
                         </ListItemButton>
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton onClick={() => setPage(<Profile />)}>
+                        <ListItemButton onClick={() => setPage(<ProfilePage />)}>
                             <ListItemIcon>
                                 <FitnessCenterIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Profile"} />
+                            <ListItemText primary={"ProfilePage"} />
                         </ListItemButton>
                     </ListItem>
 
