@@ -152,7 +152,7 @@ export function Interface() {
             <AddButton startIcon={<AddBoxIcon />} onClick={() => {
                 handleAddMeal(mealText, calText);
             }}>
-                ADD MEAL
+                ADD FOOD
             </AddButton>
         )
 
@@ -221,7 +221,11 @@ export function Interface() {
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
                         <Container style={{ fontSize: "14px", /*color: mfocused ? '#499c8c' : ''*/ }}>
-                            <TextField id="interfaceTF" placeholder="Add item" variant="standard" fullWidth sx={{ width: '100%' }} label='meal'
+
+                            <TextField id="interfaceTF" placeholder="Add food" variant="standard" fullWidth sx={{ width: '100%' }} label='Food'
+
+
+
                                 onChange={(mealText) => setMealText(mealText.target.value)}
                                 inputRef={mealInput}
                                 InputLabelProps={{ shrink: true, fontSize: '14.5px' }}
@@ -230,7 +234,8 @@ export function Interface() {
                     </Grid>
                     <Grid item xs={6}>
                         <Container style={{ fontSize: "14px", /*color: cfocused ? '#499c8c' : ''*/ }}>
-                            <TextField id="interfaceTF" placeholder="Add calories" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='calories'
+
+                            <TextField id="interfaceTF" placeholder="Add calories" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='Calories'
                                 onChange={(calText) => setCalText(calText.target.value)}
                                 inputRef={calInput}
                                 InputLabelProps={{ shrink: true }}

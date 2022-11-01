@@ -29,11 +29,15 @@ import Dash from './dash/Dash';
 
 import Nutrition from './components/Nutrition';
 import Fitness from './components/Fitness';
+
+
+
 import LogoutIcon from '@mui/icons-material/Logout';
 import CellTowerIcon from '@mui/icons-material/CellTower';
 //import Landing from './Landing';
 // import REStButtonTestPage from './nutrition/REStButtonTestPage';
 // import ActivityPage from './activity/ActivityPage';
+
 
 
 const drawerWidth = 240;
@@ -149,6 +153,11 @@ export default function PersistentDrawerLeft() {
                     </ListItem>
                     <ListItem disablePadding>
 
+                        <ListItemButton onClick={() => setPage(<Nutrition />)}>
+                            <ListItemIcon>
+                                <RestaurantIcon />
+
+
 
                         <ListItemButton onClick={() =>  {
                             localStorage.clear();
@@ -157,10 +166,15 @@ export default function PersistentDrawerLeft() {
                         }>
                             <ListItemIcon>
                                 <LogoutIcon />
+
                             </ListItemIcon>
-                            <ListItemText primary={"Logout"} />
+                            <ListItemText primary={"Food"} />
                         </ListItemButton>
                     </ListItem>
+
+                 
+                    
+
 
                     {<ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<Fitness />)}>
@@ -226,6 +240,7 @@ export default function PersistentDrawerLeft() {
                             <ListItemText primary={"Past Dates"} />
                         </ListItemButton>
                     </ListItem> }
+
 
                 </List>
                 <Divider />
