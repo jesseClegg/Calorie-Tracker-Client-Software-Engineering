@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Nutrition() {
+export default function NutritionPage() {
     return (
         <div>Nutrition page yo</div>
     )

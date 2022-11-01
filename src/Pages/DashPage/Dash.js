@@ -1,10 +1,10 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container"
-import Progress from "./Progress";
-import CalorieCounter from "./Counter";
-import { LineChart, data } from "./DashChart";
-import ActivityCard from "./ActivityTracker";
+import Progress from "./Components/Progress";
+import CalorieCounter from "./Components/Counter";
+import { LineChart, data } from "./Components/DashChart";
+import ActivityCard from "./Components/ActivityTracker";
 
 export function Dash() {
 
