@@ -1,45 +1,37 @@
+// react and mui components
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
+import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import List from '@mui/material/List';
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+// mui icons
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CellTowerIcon from '@mui/icons-material/CellTower';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import LoginIcon from '@mui/icons-material/Login';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import ActivityPage from './Pages/ActivityPage';
-import REStButtonTestPage from './Pages/REStButtonTestPage';
-import FoodPage from './Pages/FoodPage';
-import PastDates from './Pages/PastDates';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import Dash from './dash/Dash';
-
-import Nutrition from './components/Nutrition';
-import Activity from './components/Activity';
-import Profile from './components/Profile';
-
-
-
 import LogoutIcon from '@mui/icons-material/Logout';
-import CellTowerIcon from '@mui/icons-material/CellTower';
-//import Landing from './Landing';
-// import REStButtonTestPage from './nutrition/REStButtonTestPage';
-// import ActivityPage from './activity/ActivityPage';
-
-
+import MenuIcon from '@mui/icons-material/Menu';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+// pages
+import Activity from './components/Activity';
+import Dash from './dash/Dash';
+import ListItemText from '@mui/material/ListItemText';
+import Nutrition from './components/Nutrition';
+import PastDates from './Pages/PastDates';
+import Profile from './components/Profile';
+import REStButtonTestPage from './Pages/REStButtonTestPage';
 
 const drawerWidth = 240;
 
@@ -174,7 +166,7 @@ export default function PersistentDrawerLeft() {
                     <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<Profile />)}>
                             <ListItemIcon>
-                                <FitnessCenterIcon />
+                                <AccountBoxIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Profile"} />
                         </ListItemButton>
