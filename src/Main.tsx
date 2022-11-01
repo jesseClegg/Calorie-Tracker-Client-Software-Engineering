@@ -16,6 +16,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LoginIcon from '@mui/icons-material/Login';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
@@ -174,7 +175,7 @@ export default function PersistentDrawerLeft() {
                     <ListItem disablePadding>
                         <ListItemButton onClick={() => setPage(<Profile />)}>
                             <ListItemIcon>
-                                <FitnessCenterIcon />
+                                <AccountBoxIcon />
                             </ListItemIcon>
                             <ListItemText primary={"Profile"} />
                         </ListItemButton>
