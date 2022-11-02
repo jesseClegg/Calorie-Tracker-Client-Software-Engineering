@@ -24,12 +24,12 @@
 (updated 10/29)
 - fix netifly build (low priority)
 - Card/component to select favorite food
-- Card/component to select favorite excercise
-- s3 will be needed to store favorite images
+- Card/component to select favorite excercise [completed]
+- s3 will be needed to store favorite images [completed]
 - finish deploying on ec2 (pm2 or security issue)
-- restructure the directory organization
-- better naming conventions
+- restructure the directory organization [completed]
+- better naming conventions [completed]
 - fetch data with useeffect hook 
-- Database (most likely mongoDB, suggestions welcome)
+- Database (most likely mongoDB, suggestions welcome) -> decided on mongo db [in progress]
 - Recoil global states for pages
 - Workout Tracker and calorie burn
