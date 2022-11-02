@@ -25,13 +25,14 @@ export function Dash() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper className="bg-dark text-light" sx={{ p: 3 }}>
-            <h2>Calories In</h2>
+            <h2>Calories Consumed 
+            </h2>
             <CalorieCounter />
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper className="bg-dark text-light" sx={{ p: 3 }}>
-            <h2>Calories Out</h2>
+            <h2>Calories Burned</h2>
 
             <ActivityCard />
 

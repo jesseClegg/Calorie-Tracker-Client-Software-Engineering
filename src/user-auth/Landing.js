@@ -34,11 +34,13 @@ const Landing = props => {
                             </span> for free!</h1>
                             <p className="lead my-4">
                                 We can help you tackle any fitness goal on the planet
-                                completely free of charge. Create your account today, and next
+                                completely FREE. Create your account today,and next
                                 time you have a question, <br /> just say <span className="text-primary">Hey Coach</span>.
                             </p>
+                            <Link className='nav-link' to='/signup'>
                             <button className="btn btn-primary btn-lg" type="button" data-bs-toggle="modal"
                                 data-bs-target="#account-registration">Create Account</button>
+                                </Link>
                         </div>
                         <img className="img-fluid w-50 d-none d-md-block" src="https://hey-coach-bucket.s3.us-east-2.amazonaws.com/showcase.jpg" alt="showcasepicture" />
                     </div>
