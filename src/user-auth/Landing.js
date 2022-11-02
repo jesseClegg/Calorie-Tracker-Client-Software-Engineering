@@ -30,16 +30,16 @@ const Landing = props => {
                 <div className="container">
                     <div className="d-md-flex align-items-center justify-content-between">
                         <div>
-                            <h1>Try <span className="text-primary">Hey Coach
-                            </span> for free!</h1>
+                            <h1> Join <span className="text-primary">Hey Coach
+                            </span> for $0!</h1>
                             <p className="lead my-4">
-                                We can help you tackle any fitness goal on the planet
-                                completely FREE. Create your account today,and next
+                                 Fitness and nutrition  can help you tackle any fitness goal on the planet
+                                completely FREE.  Create your account today,and next
                                 time you have a question, <br /> just say <span className="text-primary">Hey Coach</span>.
                             </p>
                             <Link className='nav-link' to='/signup'>
                             <button className="btn btn-primary btn-lg" type="button" data-bs-toggle="modal"
-                                data-bs-target="#account-registration">Create Account</button>
+                                data-bs-target="#account-registration">Get Started Now </button>
                                 </Link>
                         </div>
                         <img className="img-fluid w-50 d-none d-md-block" src="https://hey-coach-bucket.s3.us-east-2.amazonaws.com/showcase.jpg" alt="showcasepicture" />
