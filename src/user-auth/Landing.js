@@ -33,8 +33,8 @@ const Landing = props => {
                             <h1> Join <span className="text-primary">Hey Coach
                             </span> for $0!</h1>
                             <p className="lead my-4">
-                                 Fitness and nutrition  can help you tackle any fitness goal on the planet
-                                completely FREE.  Create your account today,and next
+                                 Our virtual fitness and nutrition tracker can help you tackle any fitness goal on the planet
+                                completely FREE.  Create your account today, and next
                                 time you have a question, <br /> just say <span className="text-primary">Hey Coach</span>.
                             </p>
                             <Link className='nav-link' to='/signup'>
