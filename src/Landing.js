@@ -38,7 +38,8 @@ const Landing = props => {
                                 time you have a question, <br /> just say <span className="text-primary">Hey Coach</span>.
                             </p>
                             <button className="btn btn-primary btn-lg" type="button" data-bs-toggle="modal"
-                                data-bs-target="#account-registration">Create Account</button>
+                                data-bs-target="#account-registration">
+                                    <Link className='nav-link' to='/signup'>Create Account</Link></button>
                         </div>
                         <img className="img-fluid w-50 d-none d-md-block" src="https://hey-coach-bucket.s3.us-east-2.amazonaws.com/showcase.jpg" alt="showcasepicture" />
                     </div>
@@ -49,7 +50,8 @@ const Landing = props => {
                 <div className="container">
                     <div className="d-md-flex align-items-center text-center text-md-start">
                         <h3 className="mb-3 mb-md-0">Already have an account?</h3>
-                        <button type="button" className="btn btn-light btn-sm m-3">Log in here</button>
+                        <button type="button" className="btn btn-light btn-sm m-3">
+                            <Link className='nav-link text-info' to='/login'>Log In Here</Link></button>
                     </div>
                 </div>
             </section>
