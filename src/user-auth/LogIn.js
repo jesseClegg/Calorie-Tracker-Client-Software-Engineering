@@ -46,7 +46,7 @@ export default function LogIn() {
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </nav>
 
