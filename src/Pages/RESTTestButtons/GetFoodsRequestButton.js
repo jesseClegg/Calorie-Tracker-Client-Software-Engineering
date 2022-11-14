@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { useAuth } from '../../user-auth/contexts/AuthContexts';
+import axios from 'axios';
 
 
 const GetDaysRequestButton = () => {
@@ -6,32 +8,37 @@ const GetDaysRequestButton = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [err, setErr] = useState('');
 
+    const { userEmail } = useAuth();
+
     const handleClick = async () => {
         setIsLoading(true);
-        try {
-            debugger;
-            const response = await fetch('http://localhost:3000/api/foods',
-                {
-                    method: 'GET',
-                    crossorigin: true
+        // debugger;
+        // const response = await fetch('http://localhost:3000/api/foods?email=' + userEmail,
+        //     {
+        //         method: 'GET',
+        //         crossorigin: true
 
-                });
+        //     });
 
-            if (!response.ok) {
-                throw new Error(`Error! status: ${response.status}`);
-            }
+        // if (!response.ok) {
+        //     throw new Error(`Error! status: ${response.status}`);
+        // }
 
-            const result = await response.json();
+        // const result = await response.json();
 
-            console.log('result is: ', JSON.stringify(result, null, 4));
+        // console.log('result is: ', JSON.stringify(result, null, 4));
 
-            setData(result);
-        } catch (err) {
-            setErr(err.message);
-        } finally {
-            setIsLoading(false);
-
-        }
+        // setData(result);
+        axios.post('http://localhost:3000/api/foods', {
+            email: 'mylesMotha'      //userEmail
+        })
+            .then(function (response) {
+                console.log(response);
+                isLoading(false);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     console.log(data);
