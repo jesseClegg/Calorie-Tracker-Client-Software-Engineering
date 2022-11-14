@@ -29,19 +29,21 @@ const GetDaysRequestButton = () => {
         // console.log('result is: ', JSON.stringify(result, null, 4));
 
         // setData(result);
-        axios.post('http://localhost:3000/api/foods', {
-            email: 'mylesMotha'      //userEmail
+        axios.get('http://localhost:3000/api/foods', {
+            params: {
+                email: 'mylesMotha'      //userEmail
+            }
         })
             .then(function (response) {
-                console.log(response);
-                isLoading(false);
+                console.log(response.data);
+                setIsLoading(false);
             })
             .catch(function (error) {
                 console.log(error);
             });
     };
 
-    console.log(data);
+    // console.log(data);
 
     return (
         <div>
