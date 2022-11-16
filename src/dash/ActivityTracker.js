@@ -46,7 +46,7 @@ export default function ActivityTracker() {
                                     startIcon={<AddBoxIcon />}
                                     sx={{
                                         color: 'white',
-                                        left: 400,
+                                        left: 275,
                                         width: 130,
                                         backgroundColor: '#1565C0',
                                         '&:hover': {
@@ -83,7 +83,7 @@ export default function ActivityTracker() {
                                         startIcon={<AddBoxIcon />}
                                         sx={{
                                             color: 'white',
-                                            left: 400,
+                                            left: 275,
                                             width: 130,
                                             backgroundColor: '#1565C0',
                                             '&:hover': {
@@ -120,7 +120,7 @@ export default function ActivityTracker() {
                                         startIcon={<AddBoxIcon />}
                                         sx={{
                                             color: 'white',
-                                            left: 400,
+                                            left: 275,
                                             width: 130,
                                             backgroundColor: '#1565C0',
                                             '&:hover': {
@@ -157,7 +157,7 @@ export default function ActivityTracker() {
                                         startIcon={<AddBoxIcon />}
                                         sx={{
                                             color: 'white',
-                                            left: 400,
+                                            left: 275,
                                             width: 130,
                                             backgroundColor: '#1565C0',
                                             '&:hover': {
