@@ -25,30 +25,28 @@ export default function ActivityTracker() {
         const hoursInput = useRef(null);
 
         return (
-            <Card sx={{ display: 'flex' }}>
+            <><Card sx={{ display: 'flex' }}>
                 <CardMedia
                     component="img"
                     sx={{ width: 151 }}
                     image="https://hey-coach-bucket.s3.us-east-2.amazonaws.com/swimming.jpg"
-                    alt="Live from space album cover"
-                />
+                    alt="Live from space album cover" />
                 <CardContent>
                     <Container>
-                        <b>Swimming</b> - 100 calories per hour
+                        <b>Swimming</b> - 500 calories per hour
                         <Grid container spacing={1}>
-                            <Grid item xs={6}>
-                                <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='Hours'
+                            <Grid item xs={1}>
+                                <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '110px' }} type="number" label='Hours'
                                     onChange={(hoursTextField) => setHoursTextField(hoursTextField.target.value)}
                                     inputRef={hoursInput}
-                                    InputLabelProps={{ shrink: true }}
-                                />
+                                    InputLabelProps={{ shrink: true }} />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={1}>
                                 <Button
                                     startIcon={<AddBoxIcon />}
                                     sx={{
                                         color: 'white',
-                                        left: 20,
+                                        left: 400,
                                         width: 130,
                                         backgroundColor: '#1565C0',
                                         '&:hover': {
@@ -56,14 +54,127 @@ export default function ActivityTracker() {
                                         }
                                     }}
                                     onClick={() => {
-                                        updateCaloriesOut(hoursTextField, 100);
-                                    }}
+                                        updateCaloriesOut(hoursTextField, 500);
+                                    } }
                                 >ADD</Button>
                             </Grid>
                         </Grid>
                     </Container>
                 </CardContent>
             </Card>
+            <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 151 }}
+                        image="https://heycoach.s3.amazonaws.com/running.jpeg"
+                        alt="Live from space album cover" />
+                    <CardContent>
+                        <Container>
+                            <b>Running</b> - 750 calories per hour
+                            <Grid container spacing={1}>
+                                <Grid item xs={1}>
+                                    <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '110px' }} type="number" label='Hours'
+                                        onChange={(hoursTextField) => setHoursTextField(hoursTextField.target.value)}
+                                        inputRef={hoursInput}
+                                        InputLabelProps={{ shrink: true }} />
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Button
+                                        startIcon={<AddBoxIcon />}
+                                        sx={{
+                                            color: 'white',
+                                            left: 400,
+                                            width: 130,
+                                            backgroundColor: '#1565C0',
+                                            '&:hover': {
+                                                backgroundColor: '#1254a1',
+                                            }
+                                        }}
+                                        onClick={() => {
+                                            updateCaloriesOut(hoursTextField, 750);
+                                        } }
+                                    >ADD</Button>
+                                </Grid>
+                            </Grid>
+                        </Container>
+                    </CardContent>
+                </Card>
+                <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 151 }}
+                        image="https://heycoach.s3.amazonaws.com/With-Bicycle-all-over-the-world-Mountain-bike-trails-4K-ultra-HD-Wallpaper.jpeg"
+                        alt="Live from space album cover" />
+                    <CardContent>
+                        <Container>
+                            <b>Biking</b> - 653 calories per hour
+                            <Grid container spacing={1}>
+                                <Grid item xs={1}>
+                                    <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '110px' }} type="number" label='Hours'
+                                        onChange={(hoursTextField) => setHoursTextField(hoursTextField.target.value)}
+                                        inputRef={hoursInput}
+                                        InputLabelProps={{ shrink: true }} />
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Button
+                                        startIcon={<AddBoxIcon />}
+                                        sx={{
+                                            color: 'white',
+                                            left: 400,
+                                            width: 130,
+                                            backgroundColor: '#1565C0',
+                                            '&:hover': {
+                                                backgroundColor: '#1254a1',
+                                            }
+                                        }}
+                                        onClick={() => {
+                                            updateCaloriesOut(hoursTextField, 653);
+                                        } }
+                                    >ADD</Button>
+                                </Grid>
+                            </Grid>
+                        </Container>
+                    </CardContent>
+                </Card>
+                <Card sx={{ display: 'flex' }}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: 151 }}
+                        image="https://heycoach.s3.amazonaws.com/weightlifting.jpeg"
+                        alt="Live from space album cover" />
+                    <CardContent>
+                        <Container>
+                            <b>Weight Lifting</b> - 400 calories per hour
+                            <Grid container spacing={1}>
+                                <Grid item xs={1}>
+                                    <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '110px' }} type="number" label='Hours'
+                                        onChange={(hoursTextField) => setHoursTextField(hoursTextField.target.value)}
+                                        inputRef={hoursInput}
+                                        InputLabelProps={{ shrink: true }} />
+                                </Grid>
+                                <Grid item xs={1}>
+                                    <Button
+                                        startIcon={<AddBoxIcon />}
+                                        sx={{
+                                            color: 'white',
+                                            left: 400,
+                                            width: 130,
+                                            backgroundColor: '#1565C0',
+                                            '&:hover': {
+                                                backgroundColor: '#1254a1',
+                                            }
+                                        }}
+                                        onClick={() => {
+                                            updateCaloriesOut(hoursTextField, 400);
+                                        } }
+                                    >ADD</Button>
+                                </Grid>
+                            </Grid>
+                        </Container>
+                    </CardContent>
+                </Card>
+                </>
+            
         )
     }
     return (
@@ -72,15 +183,6 @@ export default function ActivityTracker() {
                 <h3>Quick Add Activity</h3>
                 <Container>
                     <Grid container spacing={1}>
-                        <Grid item xs={12}>
-                            <ActivityCard />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <ActivityCard />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <ActivityCard />
-                        </Grid>
                         <Grid item xs={12}>
                             <ActivityCard />
                         </Grid>
