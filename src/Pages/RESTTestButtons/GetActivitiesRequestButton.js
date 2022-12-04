@@ -10,11 +10,13 @@ const GetActivitiesRequestButton = () => {
     setIsLoading(true);
     try {
         debugger;
-      const response = await fetch('http://localhost:3000/api/activities',
+      const response = await fetch('http://localhost:3000/api/getAllActivities',
           {
             method: 'GET',
-            crossorigin: true
-
+            crossorigin: true,
+            Body: {
+                email: "jesse"
+            }
           });
 
       if (!response.ok) {
@@ -23,8 +25,8 @@ const GetActivitiesRequestButton = () => {
 
       const result = await response.json();
 
-      console.log('result is: ', JSON.stringify(result, null, 4));
-
+      console.log('result is: ', JSON.stringify(result.body, null, 4));
+      console.log(result.body);
       setData(result);
     } catch (err) {
       setErr(err.message);

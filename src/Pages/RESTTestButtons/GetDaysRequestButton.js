@@ -10,7 +10,7 @@ const GetDaysRequestButton = () => {
         setIsLoading(true);
         try {
             debugger;
-            const response = await fetch('http://localhost:3000/api/days',
+            const response = await fetch('http://localhost:3000/api/getAllDays',
                 {
                     method: 'GET',
                     crossorigin: true

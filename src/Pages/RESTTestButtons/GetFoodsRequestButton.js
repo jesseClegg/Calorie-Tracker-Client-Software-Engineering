@@ -13,7 +13,7 @@ const GetDaysRequestButton = () => {
     const handleClick = async () => {
         setIsLoading(true);
         // debugger;
-        // const response = await fetch('http://localhost:3000/api/foods?email=' + userEmail,
+        // const response = await fetch('http://localhost:3000/api/getAllFoods?email=' + userEmail,
         //     {
         //         method: 'GET',
         //         crossorigin: true
@@ -29,7 +29,7 @@ const GetDaysRequestButton = () => {
         // console.log('result is: ', JSON.stringify(result, null, 4));
 
         // setData(result);
-        axios.post('http://localhost:3000/api/foods', {
+        axios.post('http://localhost:3000/api/getAllFoods', {
             email: 'mylesMotha'      //userEmail
         })
             .then(function (response) {
