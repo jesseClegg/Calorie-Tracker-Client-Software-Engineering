@@ -199,14 +199,14 @@ export default function PersistentDrawerLeft() {
             </ListItemButton>
           </ListItem> */}
 
-          <ListItem disablePadding>
+          {/*<ListItem disablePadding>
             <ListItemButton onClick={() => setPage(<REStButtonTestPage />)}>
               <ListItemIcon>
                 <CellTowerIcon />
               </ListItemIcon>
               <ListItemText primary={"Developer tools"} />
             </ListItemButton>
-          </ListItem>
+          </ListItem>*/}
 
           {/* <ListItem disablePadding>
             <ListItemButton onClick={() => setPage(<PastDates />)}>

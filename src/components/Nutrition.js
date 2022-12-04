@@ -3,25 +3,27 @@ import { useAuth } from "../user-auth/contexts/AuthContexts";
 import axios from "axios";
 
 export default function Nutrition() {
-  const { currentUser } = useAuth();
-  const [meals, setMeals] = useState(getMeals(currentUser.email));
+    const { currentUser } = useAuth();
+    const [meals, setMeals] = useState(null);
+    useEffect(() => {
+        getMeals(currentUser.email);
+    }, [])//empty dependency array fires on first render only
 
-  function getMeals(userEmail) {
-    axios
-      .request({
-        method: "GET",
-        url: `http://localhost:3000/api/getAllFoods`,
-        data: {
-          email: userEmail,
-        },
-      })
-      .then(function (response) {
-        setMeals(JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        setMeals("error");
-      });
-  }
-  //   console.log(meals);
-  return <div>{meals}</div>;
+    function getMeals(userEmail) {
+        axios
+            .request({
+                method: "POST",
+                url: `http://localhost:3000/api/getAllFoods`,
+                data: {
+                    email: userEmail,
+                },
+            })
+            .then(function (response) {
+                setMeals(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                setMeals("error");
+            });
+    }
+    return <div>Your saved meals: {meals}</div>;
 }
