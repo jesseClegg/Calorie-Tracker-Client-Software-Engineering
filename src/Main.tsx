@@ -23,8 +23,8 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 // import ActivityPage from "./Pages/ActivityPage";
 import REStButtonTestPage from "./Pages/REStButtonTestPage";
 // import FoodPage from "./Pages/FoodPage";
-// import PastDates from "./Pages/PastDates";
-// import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PastDates from "./Pages/PastDates";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Dash from "./dash/Dash";
 
 import Nutrition from "./components/Nutrition";
@@ -208,14 +208,14 @@ export default function PersistentDrawerLeft() {
             </ListItemButton>
           </ListItem>*/}
 
-          {/* <ListItem disablePadding>
+          { <ListItem disablePadding>
             <ListItemButton onClick={() => setPage(<PastDates />)}>
               <ListItemIcon>
                 <CalendarMonthIcon />
               </ListItemIcon>
               <ListItemText primary={"Past Dates"} />
             </ListItemButton>
-          </ListItem> */}
+          </ListItem> }
 
           <ListItem disablePadding>
             <ListItemButton
