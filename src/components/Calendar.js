@@ -8,11 +8,10 @@ import axios from "axios";
 export default function Calendar() {
     const [selected, setSelected] = useState(new Date());
     const { currentUser } = useAuth();
-
+    const [day, setDay]= useState(null);
 
     useEffect( () => {
         function getDay(dateSelected){
-            //console.log("FROM INSIDE FUNCTION == you chose to look up "+dateSelected+" date for a request");
             axios
                 .request({
                     method: "POST",
@@ -23,36 +22,39 @@ export default function Calendar() {
                     },
                 })
                 .then(function (response) {
-                    // setActivities(JSON.stringify(response.data));
-                    console.log(JSON.stringify(response.data));
-                    //todo: may need to set data here?
-                    return response.data;
+                    if(!response.data){
+                        console.log("no results for this day :(")
+                    }else{
+                        console.log(response.data);
+                        setDay(response.data.day)
+                    }
                 })
                 .catch(function (error) {
                     // setActivities("error");
                 });
         }
-        console.log("beep boop you chose to look up [" + selected + "] date for a request");
-        //getDay(selected);
-        setSelected(getDay(selected))
-        //print the results
-       // console.log("the results for today are: ")
-        //console.log(results);
+        getDay(selected)
     }, [selected]);
 
     let footer = <p>Please pick a day.</p>;
     if (selected)
         footer = <p>You picked {format(selected, 'PP')}.</p>;
-
+    if(day)
+        footer= <p>results are: {day.caloriesIn} </p>
 
     return (
-        <DayPicker
-            className='bg-gray-800 rounded p-4 flex justify-between'
-            mode="single"
-            selected={selected}
-            onSelect={setSelected}
-            footer={footer}
-        />
+
+        <div>
+            <DayPicker
+                className='bg-gray-800 rounded p-4 flex justify-between'
+                mode="single"
+                selected={selected}
+                onSelect={setSelected}
+                footer={footer}
+            />
+
+        </div>
+
     );
 }
 
