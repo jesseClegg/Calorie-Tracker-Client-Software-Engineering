@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../user-auth/contexts/AuthContexts";
 import axios from "axios";
+import {Container} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function Activities() {
     const { currentUser } = useAuth();
@@ -19,11 +24,26 @@ export default function Activities() {
                 },
             })
             .then(function (response) {
-                setActivities(JSON.stringify(response.data));
+                setActivities(response.data);
             })
             .catch(function (error) {
                 setActivities("error");
             });
     }
-  return <div>Your saved activities: {activities}</div>;
+  return <>
+      {activities && activities.map((activities) => (
+          <Container style={ {marginBottom: 20, marginTop: 20} }>
+
+                          <h2>
+                              {activities.name}
+                          </h2>
+
+
+                          <p>
+                              {activities.calories}
+                          </p>
+
+          </Container>
+      ))}
+  </>
 }

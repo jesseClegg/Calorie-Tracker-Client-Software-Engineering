@@ -44,10 +44,11 @@ export default function Calendar() {
     }, [selected]);
 
     let footer = <p>Please pick a day.</p>;
-    if (selected)
-        footer = <p>You picked {format(selected, 'PP')}.</p>;
     if(day)
         footer= <p>results are: {day.caloriesIn} </p>
+    if (selected)
+        footer = <p>You picked {format(selected, 'PP')}.</p>;
+
 
     return (
 
