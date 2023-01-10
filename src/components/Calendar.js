@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import axios from "axios";
+import DayCard from "./DayCard";
 
 export default function Calendar() {
     const [selected, setSelected] = useState(new Date());
@@ -25,8 +26,14 @@ export default function Calendar() {
                     if(!response.data){
                         console.log("no results for this day :(")
                     }else{
-                        console.log(response.data);
-                        setDay(response.data.day)
+                        const result=response.data.day
+                        console.log(result);
+                        if(!result){
+                            result.CaloriesIn=0;
+                            result.CaloriesOut=0;
+                        }
+                        //todo: right here we have the data
+                        setDay(result)
                     }
                 })
                 .catch(function (error) {
@@ -52,7 +59,8 @@ export default function Calendar() {
                 onSelect={setSelected}
                 footer={footer}
             />
-
+            <DayCard/>
+            <DayCard CaloriesIn={day} />
         </div>
 
     );
