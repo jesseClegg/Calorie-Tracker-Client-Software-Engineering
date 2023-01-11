@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../user-auth/contexts/AuthContexts";
 import axios from "axios";
+import NutritionList from "./NutritionList";
 
 export default function Nutrition() {
     const { currentUser } = useAuth();
-    const [meals, setMeals] = useState(null);
+    const [foods, setFoods] = useState(null);
     useEffect(() => {
         getMeals(currentUser.email);
     }, [])//empty dependency array fires on first render only
@@ -19,11 +20,13 @@ export default function Nutrition() {
                 },
             })
             .then(function (response) {
-                setMeals(JSON.stringify(response.data));
+                setFoods(response.data);
             })
             .catch(function (error) {
-                setMeals("error");
+                setFoods("error");
             });
     }
-    return <div>Your saved meals: {meals}</div>;
+    return <div>
+        {foods && <NutritionList foods={foods} />}
+    </div>;
 }

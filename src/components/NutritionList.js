@@ -9,34 +9,29 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import Card from "@mui/material/Card";
 
 
-const ActivityList=(props)=>{
+const NutritionList=(props)=>{
+    const foods=props.foods;
     const [totalCalories, setTotalCalories] = useState(0);
     const [hoursOfActivity, setHoursOfActivity] = useState('');
     const [hoursTextField, setHoursTextField] = useState('');
     const hoursInput = useRef(null);
-    const activities=props.activities;
 
-    function updateCaloriesOut(hours, caloriesPerHour) {
-        const caloriesToUpdate=parseInt(totalCalories) + (parseInt(hours) * parseInt(caloriesPerHour));
-        console.log("total calories to add = "+caloriesToUpdate);
-        setTotalCalories(caloriesToUpdate);
-    }
 
     return (
         <div>
-            {activities.map((activities) => (
+            {foods.map((foods) => (
 
 
                 <Card sx={{ display: 'flex' }}>
                     <CardMedia
                         component="img"
                         sx={{ width: 151 }}
-                        image={activities.imageUrl}
+                        image={foods.imageUrl}
                         alt="your activity image"
                     />
                     <CardContent>
                         <Container>
-                            <b>{activities.name}</b> - {activities.calories} calories per hour
+                            <b>{foods.name}</b> - {foods.calories} calories per hour
                             <Grid container spacing={1}>
                                 <Grid item xs={6}>
                                     <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='Hours'
@@ -58,7 +53,7 @@ const ActivityList=(props)=>{
                                             }
                                         }}
                                         onClick={() => {
-                                            updateCaloriesOut(hoursTextField, activities.calories);
+                                            // updateCaloriesOut(hoursTextField, foods.calories);
                                         }}
                                     >ADD</Button>
                                 </Grid>
@@ -76,4 +71,4 @@ const ActivityList=(props)=>{
     );
 }
 
-export  default ActivityList;
+export default NutritionList

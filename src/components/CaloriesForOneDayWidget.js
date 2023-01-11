@@ -65,7 +65,7 @@ export default function Calendar() {
     return (
 
         <h1>
-            Your net calories today: {netCalories}
+            {/*Your net calories today: {netCalories}*/}
             <DayCard CaloriesIn={netCalories} />
         </h1>
 
