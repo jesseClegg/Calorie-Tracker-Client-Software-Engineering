@@ -7,39 +7,55 @@ import axios from "axios";
 import DayCard from "./DayCard";
 
 export default function Calendar() {
-    const [selected, setSelected] = useState(new Date());
+    const [selected, setSelected] = useState(getTodaysDate(new Date()));
     const { currentUser } = useAuth();
     const [day, setDay]= useState(null);
 
+    function getTodaysDate(date){
+        date.setMilliseconds(0);
+        date.setSeconds(0);
+        date.setMinutes(0);
+        date.setHours(0);
+        return date;
+    }
+
+
     useEffect( () => {
         function getDay(dateSelected){
+            const formattedDate= getTodaysDate(selected);
             axios
                 .request({
                     method: "POST",
                     url: `http://localhost:3000/api/getOneDay`,
                     data: {
                         email: currentUser.email,
-                        day: selected
+                        day: formattedDate
                     },
                 })
                 .then(function (response) {
                     if(!response.data){
                         console.log("no results for this day :(")
                     }else{
-                        const result=response.data.day
-                        console.log(result);
+                        const result=response.data.Day
+                        console.log("results we got from server: "+result);
                         if(!result){
                             result.CaloriesIn=0;
                             result.CaloriesOut=0;
                         }
                         //todo: right here we have the data
                         setDay(result)
+                        console.log("formatted from picker ="+getTodaysDate(selected));
+                        console.log("calories in: "+response.data.CaloriesIn)
+                        console.log("calories Out: "+response.data.CaloriesOut)
                     }
                 })
                 .catch(function (error) {
                     // setActivities("error");
                 });
         }
+        // selected.setMilliseconds(0);
+        // selected.setSeconds(0);
+        // selected.setHours(0);
         getDay(selected)
     }, [selected]);
 
@@ -47,6 +63,7 @@ export default function Calendar() {
     if(day)
         footer= <p>results are: {day.caloriesIn} </p>
     if (selected)
+        console.log("selected in day picker:"+selected);
         footer = <p>You picked {format(selected, 'PP')}.</p>;
 
 

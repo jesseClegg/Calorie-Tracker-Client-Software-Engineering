@@ -7,11 +7,20 @@ import DayCard from "./DayCard";
 
 
 export default function Calendar() {
-    const today="2023-01-11T01:24:50.884Z";
+    const today="2023-01-10T05:00:00.000Z";
     const [selected, setSelected] = useState(new Date());
     const { currentUser } = useAuth();
     const [day, setDay]= useState(null);
     const [netCalories, setNetCalories] = useState(0);
+
+    // function getTodaysDate(){
+    //     const date = new Date();
+    //     let day = date.getDate();
+    //     let month = date.getMonth() + 1;
+    //     let year = date.getFullYear();
+    //     let currentDate = `${day}-${month}-${year}`;
+    //     return currentDate;
+    // }
 
     useEffect( () => {
         function getDay(dateSelected){
