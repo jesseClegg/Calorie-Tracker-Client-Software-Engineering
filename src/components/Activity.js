@@ -9,7 +9,7 @@ export default function Activities() {
     const [activities, setActivities] = useState(null);
     useEffect(() => {
         getActivities(currentUser.email);
-    }, [activities, currentUser.email])
+    }, [])
 
     function getActivities(userEmail) {
         axios
