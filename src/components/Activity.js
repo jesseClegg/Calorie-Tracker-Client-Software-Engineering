@@ -3,6 +3,7 @@ import { useAuth } from "../user-auth/contexts/AuthContexts";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import ActivityList from "./ActivityList";
+import CaloriesForOneDayWidget from "../components/CaloriesForOneDayWidget"
 
 export default function Activities() {
     const { currentUser } = useAuth();
@@ -29,6 +30,7 @@ export default function Activities() {
     }
   return (
       <div>
+          <CaloriesForOneDayWidget />
       {activities && <ActivityList activities={activities} />}
       </div>
   )
