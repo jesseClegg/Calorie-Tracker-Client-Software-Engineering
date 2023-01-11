@@ -42,7 +42,6 @@ export default function Calendar() {
                             result.CaloriesIn=0;
                             result.CaloriesOut=0;
                         }
-                        //todo: right here we have the data
                         setDay(result)
                         console.log("formatted from picker ="+getTodaysDate(selected));
                         console.log("calories in: "+response.data.CaloriesIn)
@@ -77,8 +76,8 @@ export default function Calendar() {
                 onSelect={setSelected}
                 footer={footer}
             />
-            <DayCard/>
-            <DayCard CaloriesIn={day} />
+            {/*<DayCard/>*/}
+            {/*<DayCard CaloriesIn={day} />*/}
         </div>
 
     );

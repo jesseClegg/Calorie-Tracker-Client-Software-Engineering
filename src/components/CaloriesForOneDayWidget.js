@@ -2,7 +2,6 @@ import {useAuth} from "../user-auth/contexts/AuthContexts";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {format} from "date-fns";
-import {DayPicker} from "react-day-picker";
 import DayCard from "./DayCard";
 
 
@@ -13,14 +12,13 @@ export default function Calendar() {
     const [day, setDay]= useState(null);
     const [netCalories, setNetCalories] = useState(0);
 
-    // function getTodaysDate(){
-    //     const date = new Date();
-    //     let day = date.getDate();
-    //     let month = date.getMonth() + 1;
-    //     let year = date.getFullYear();
-    //     let currentDate = `${day}-${month}-${year}`;
-    //     return currentDate;
-    // }
+    function getTodaysDate(date){
+        date.setMilliseconds(0);
+        date.setSeconds(0);
+        date.setMinutes(0);
+        date.setHours(0);
+        return date;
+    }
 
     useEffect( () => {
         function getDay(dateSelected){
@@ -30,7 +28,7 @@ export default function Calendar() {
                     url: `http://localhost:3000/api/getOneDay`,
                     data: {
                         email: currentUser.email,
-                        day: today
+                        day: getTodaysDate(new Date())
                     },
                 })
                 .then(function (response) {
@@ -68,6 +66,7 @@ export default function Calendar() {
 
         <h1>
             Your net calories today: {netCalories}
+            <DayCard CaloriesIn={netCalories} />
         </h1>
 
     );
