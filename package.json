@@ -22,6 +22,7 @@
     "dotenv": "^16.0.3",
     "firebase": "^9.11.0",
     "fusioncharts": "^3.19.0",
+    "mdb-react-ui-kit": "^5.1.0",
     "moment": "^2.29.4",
     "nodemon": "^2.0.20",
     "react": "^18.2.0",

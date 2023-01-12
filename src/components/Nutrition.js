@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../user-auth/contexts/AuthContexts";
 import axios from "axios";
 import NutritionList from "./NutritionList";
+import AddFoodCard from "./AddFoodCard";
+
 
 export default function Nutrition() {
     const { currentUser } = useAuth();
@@ -27,6 +29,8 @@ export default function Nutrition() {
             });
     }
     return <div>
+
+        <AddFoodCard />
         {foods && <NutritionList foods={foods} />}
     </div>;
 }
