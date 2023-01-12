@@ -20,7 +20,7 @@ const NutritionList=(props)=>{
     const { currentUser } = useAuth();
 
     function DeleteFood(food){
-        console.log("attempint to delete: "+food);
+        console.log("attempting to delete: "+food);
         axios
             .delete('http://localhost:3000/api/deleteFood', {
                 data: {
