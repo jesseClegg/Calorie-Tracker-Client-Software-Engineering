@@ -19,10 +19,33 @@ const ActivityList=(props)=>{
     const activities=props.activities;
     const { currentUser } = useAuth();
 
+    function getTodaysDate(date){
+        date.setMilliseconds(0);
+        date.setSeconds(0);
+        date.setMinutes(0);
+        date.setHours(0);
+        return date;
+    }
+
+    // function updateCaloriesOut(hours, caloriesPerHour) {
+    //     const caloriesToUpdate=parseInt(totalCalories) + (parseInt(hours) * parseInt(caloriesPerHour));
+    //     console.log("total calories to add = "+caloriesToUpdate);
+    //     setTotalCalories(caloriesToUpdate);
+    // }
     function updateCaloriesOut(hours, caloriesPerHour) {
         const caloriesToUpdate=parseInt(totalCalories) + (parseInt(hours) * parseInt(caloriesPerHour));
-        console.log("total calories to add = "+caloriesToUpdate);
-        setTotalCalories(caloriesToUpdate);
+        axios.request({
+            method: "POST",
+            url: `http://localhost:3000/api/insertNewDay`,
+            data: {
+                email : currentUser.email.toString(),
+                days:{
+                    Day : getTodaysDate(new Date()),
+                    caloriesIn: 0,
+                    caloriesOut: caloriesToUpdate
+                }
+            },
+        });
     }
 
     function DeleteActivity(activity){
