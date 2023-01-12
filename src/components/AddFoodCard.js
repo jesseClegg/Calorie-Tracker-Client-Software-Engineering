@@ -28,8 +28,8 @@ export default function AddFoodCard() {
             data: {
                 email : currentUser.email.toString(),
                 foodToAdd : {
-                name: {foodName}.toString(),
-                calories: {caloriesPerServing}
+                name: {foodName}.foodName,
+                calories: {caloriesPerServing}.caloriesPerServing
                  }
             },
         });
