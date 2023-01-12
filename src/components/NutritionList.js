@@ -14,10 +14,34 @@ import {useAuth} from "../user-auth/contexts/AuthContexts";
 const NutritionList=(props)=>{
     const foods=props.foods;
     const [totalCalories, setTotalCalories] = useState(0);
-    const [hoursOfActivity, setHoursOfActivity] = useState('');
-    const [hoursTextField, setHoursTextField] = useState('');
-    const hoursInput = useRef(null);
+    const [servings, setServings] = useState('');
+    const [servingsTextField, setServingsTextField] = useState('');
+    const servingsInput = useRef(null);
     const { currentUser } = useAuth();
+
+    function getTodaysDate(date){
+        date.setMilliseconds(0);
+        date.setSeconds(0);
+        date.setMinutes(0);
+        date.setHours(0);
+        return date;
+    }
+
+    function updateCaloriesIn(servings, caloriesPerServing) {
+        const caloriesToUpdate=parseInt(totalCalories) + (parseInt(servings) * parseInt(caloriesPerServing));
+        axios.request({
+            method: "POST",
+            url: `http://localhost:3000/api/insertNewDay`,//todo
+            data: {
+                email : currentUser.email.toString(),
+                days:{
+                    Day : getTodaysDate(new Date()),
+                    caloriesIn: caloriesToUpdate,
+                    caloriesOut: 0
+                }
+            },
+        });
+    }
 
     function DeleteFood(food){
         console.log("attempting to delete: "+food);
@@ -50,12 +74,12 @@ const NutritionList=(props)=>{
                     />
                     <CardContent>
                         <Container>
-                            <b>{foods.name}</b> - {foods.calories} calories per hour
+                            <b>{foods.name}</b> - {foods.calories} calories per serving
                             <Grid container spacing={1}>
                                 <Grid item xs={6}>
-                                    <TextField id="interfaceTF" placeholder="Enter hours" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='Hours'
-                                               onChange={(hoursTextField) => setHoursTextField(hoursTextField.target.value)}
-                                               inputRef={hoursInput}
+                                    <TextField id="interfaceTF" placeholder="Enter Servings" variant="standard" fullWidth sx={{ width: '100%' }} type="number" label='Servings'
+                                               onChange={(servingsTextField) => setServingsTextField(servingsTextField.target.value)}
+                                               inputRef={servingsInput}
                                                InputLabelProps={{ shrink: true }}
                                     />
                                 </Grid>
@@ -78,9 +102,7 @@ const NutritionList=(props)=>{
                                             }
                                         }}
                                         onClick={() => {
-                                            //todo: include get today method
-                                            // update that date
-                                            // updateCaloriesOut(hoursTextField, foods.calories);
+                                            updateCaloriesIn(servingsTextField, foods.calories);
                                         }}
                                     >ADD</Button>
                                 </Grid>

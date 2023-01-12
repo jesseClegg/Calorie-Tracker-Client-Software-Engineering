@@ -3,7 +3,7 @@ import { useAuth } from "../user-auth/contexts/AuthContexts";
 import axios from "axios";
 import NutritionList from "./NutritionList";
 import AddFoodCard from "./AddFoodCard";
-
+import CaloriesForOneDayWidget from "../components/CaloriesForOneDayWidget"
 
 export default function Nutrition() {
     const { currentUser } = useAuth();
@@ -31,6 +31,7 @@ export default function Nutrition() {
     return <div>
 
         <AddFoodCard />
+        <CaloriesForOneDayWidget />
         {foods && <NutritionList foods={foods} />}
     </div>;
 }
