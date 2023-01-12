@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState} from "react";
+import { useAuth } from "../user-auth/contexts/AuthContexts";
+import axios from "axios";
 
 import {
     MDBCard,
@@ -11,11 +13,28 @@ import {
     MDBRipple
 } from 'mdb-react-ui-kit';
 
+
 export default function AddFoodCard() {
+    const { currentUser } = useAuth();
     const [foodName, setFoodName] = useState("");
-    const [caloriesPerServing, setCaloriesPerServing] = useState("");
+    const [caloriesPerServing, setCaloriesPerServing] = useState(0);
 
+    const handleSubmit=(e) =>{
+        e.preventDefault()//todo: preventing default action of page refreshing on submit
+        //const data={foodName, caloriesPerServing}
+        axios.request({
+            method: "POST",
+            url: `http://localhost:3000/api/insertNewFood`,
+            data: {
+                email : currentUser.email.toString(),
+                foodToAdd : {
+                name: {foodName}.toString(),
+                calories: {caloriesPerServing}
+                 }
+            },
+        });
 
+    }
 
     return (
 
@@ -29,7 +48,7 @@ export default function AddFoodCard() {
             </MDBRipple>
             <MDBCardBody>
                 <MDBCardTitle>Add a New Food</MDBCardTitle>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label>Food Name</label>
                     <input
                         type="text"
@@ -47,7 +66,7 @@ export default function AddFoodCard() {
                     >
                     </input>
                     <button>
-                        Add
+                        Add Food
                     </button>
                 </form>
                 <p>{foodName}</p>

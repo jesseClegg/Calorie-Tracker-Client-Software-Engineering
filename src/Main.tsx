@@ -30,10 +30,8 @@ import Dash from "./dash/Dash";
 import Nutrition from "./components/Nutrition";
 import Activity from "./components/Activity";
 // import Profile from "./components/Profile";
-
 import { useAuth } from "./user-auth/contexts/AuthContexts";
 import axios from "axios";
-
 import LogoutIcon from "@mui/icons-material/Logout";
 import CellTowerIcon from "@mui/icons-material/CellTower";
 //import Landing from './Landing';
