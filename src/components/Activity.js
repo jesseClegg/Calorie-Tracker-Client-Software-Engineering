@@ -4,6 +4,8 @@ import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import ActivityList from "./ActivityList";
 import CaloriesForOneDayWidget from "../components/CaloriesForOneDayWidget"
+import AddActivityCard from "./AddActivityCard";
+
 
 export default function Activities() {
     const { currentUser } = useAuth();
@@ -30,6 +32,7 @@ export default function Activities() {
     }
   return (
       <div>
+          <AddActivityCard />
           <CaloriesForOneDayWidget />
       {activities && <ActivityList activities={activities} />}
       </div>

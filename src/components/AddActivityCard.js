@@ -14,23 +14,23 @@ import {
 } from 'mdb-react-ui-kit';
 
 
-export default function AddFoodCard() {
+export default function AddActivityCard() {
     const { currentUser } = useAuth();
-    const [foodName, setFoodName] = useState("");
-    const [caloriesPerServing, setCaloriesPerServing] = useState(0);
+    const [activityToAdd, setActivityToAdd] = useState("");
+    const [caloriesPerHour, setCaloriesPerHour] = useState(0);
 
     const handleSubmit=(e) =>{
         e.preventDefault()//todo: preventing default action of page refreshing on submit
         //const data={foodName, caloriesPerServing}
         axios.request({
             method: "POST",
-            url: `http://localhost:3000/api/insertNewFood`,
+            url: `http://localhost:3000/api/insertNewActivity`,
             data: {
                 email : currentUser.email.toString(),
-                foodToAdd : {
-                name: {foodName}.foodName,
-                calories: {caloriesPerServing}.caloriesPerServing
-                 }
+                activityToAdd : {
+                    name: {activityToAdd}.activityToAdd,
+                    calories: {caloriesPerHour}.caloriesPerHour
+                }
             },
         });
 
@@ -41,36 +41,36 @@ export default function AddFoodCard() {
 
         <MDBCard>
             <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-                <MDBCardImage src='https://s3forninad.s3.amazonaws.com/food+photos/defaultFoodStockPhoto.jpg' fluid alt='default food card' />
+                <MDBCardImage src='https://s3forninad.s3.amazonaws.com/excercise+photos/excerciseStockPhoto.jpg' fluid alt='default activity card' />
                 <a>
                     <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
                 </a>
             </MDBRipple>
             <MDBCardBody>
-                <MDBCardTitle>Add a New Food</MDBCardTitle>
+                <MDBCardTitle>Add a New Activity</MDBCardTitle>
                 <form onSubmit={handleSubmit}>
-                    <label>Food Name</label>
+                    <label>Activity Name</label>
                     <input
                         type="text"
                         required
-                        value={foodName}
-                        onChange={(e)=> setFoodName(e.target.value)}
+                        value={activityToAdd}
+                        onChange={(e)=> setActivityToAdd(e.target.value)}
                     >
                     </input>
-                    <label>Calories Per Serving</label>
+                    <label>Calories Per Hour</label>
                     <input
                         type="text"
                         required
-                        value={caloriesPerServing}
-                        onChange={(e)=>setCaloriesPerServing(e.target.value)}
+                        value={caloriesPerHour}
+                        onChange={(e)=>setCaloriesPerHour(e.target.value)}
                     >
                     </input>
                     <button>
-                        Add Food
+                        Add Activity
                     </button>
                 </form>
-                <p>{foodName}</p>
-                <p>{caloriesPerServing}</p>
+                <p>{activityToAdd}</p>
+                <p>{caloriesPerHour}</p>
             </MDBCardBody>
         </MDBCard>
     );
